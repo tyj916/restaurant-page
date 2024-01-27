@@ -1,0 +1,94 @@
+:root {
+  --size-xxl: 48px;
+  --size-xl: 36px;
+  --size-l: 24px;
+  --size-r: 18px;
+  --size-s: 12px;
+  --golden: #e0aa19;
+  --lightgolden: #e7ce7d;
+  --shade-yellow: #b8a05d;
+  --shade-golden: #d6bf6d;
+  --white: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  font-size: var(--size-r);
+  background: url('./banana.webp') no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+h1 {
+  font-size: var(--size-xxl);
+}
+
+header {
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--golden);
+}
+
+header nav {
+  display: flex;
+  gap: var(--size-l);
+}
+
+header nav button {
+  font-size: var(--size-l);
+  font-weight: bold;
+  padding: 18px 36px;
+  background-color: var(--golden);
+  color: var(--white);
+  border: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+header nav button.current {
+  background-color: var(--white);
+  color: var(--golden);
+}
+
+#content {
+  padding: 5vw;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  border-radius: var(--size-l);
+  padding: var(--size-l);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-l);
+}
+
+.container h1 {
+  color: var(--golden);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-l);
+}
+
+.card {
+  max-width: 400px;
+  background-color: var(--white);
+  color: var(--golden);
+  padding: var(--size-l);
+  box-shadow: 0px 0px 8px 2px var(--golden);
+  border-radius: 8px;
+}
