@@ -1,3 +1,4 @@
+import './style.css';
 import {render as renderMenu} from './menu';
 
 // cache DOM
