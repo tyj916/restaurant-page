@@ -1,3 +1,4 @@
+import {render as renderMenu} from './menu';
 
 // cache DOM
 const body = document.querySelector('body');
@@ -38,7 +39,7 @@ function switchContent(event) {
   
   if (target.id) {
     content.textContent = '';
-    
+
     const current = nav.querySelectorAll('.current');
     current.forEach(btn => {
       btn.classList.remove('current');
@@ -53,7 +54,7 @@ function switchContent(event) {
       break;
 
     case 'menu':
-      console.log('menu');
+      renderMenu();
       break;
 
     case 'about':
