@@ -16,7 +16,7 @@ function render() {
   container.classList.add('container');
   
   const h1 = document.createElement('h1');
-  h1.textContent = "The Banana Shop";
+  h1.textContent = "The Banana";
   container.appendChild(h1);
 
   const operatingHour = document.createElement('div');
