@@ -1,5 +1,6 @@
 import './style.css';
 import {render as renderMenu} from './menu';
+import {render as renderAbout} from './about';
 
 // cache DOM
 const body = document.querySelector('body');
@@ -59,7 +60,7 @@ function switchContent(event) {
       break;
 
     case 'about':
-      console.log('about');
+      renderAbout();
       break;
   }
 }
