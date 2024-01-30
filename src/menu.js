@@ -1,4 +1,6 @@
-import img from './banana-oatmeal.jpg';
+import bananaOatmealImg from './img/banana-oatmeal.jpg';
+import bananaPancakeImg from './img/banana-pancake.jpg';
+import friedBananaImg from './img/fried-banana.jpg';
 
 export function render() {
   const container = document.createElement('div');
@@ -12,25 +14,55 @@ export function render() {
   cards.classList.add('cards');
   container.appendChild(cards);
 
+  foodlist.forEach(food => {
+    const card = foodCard(food.title, food.img, food.description);
+    cards.appendChild(card.getCard());
+  });
+
+  content.appendChild(container);
+}
+
+function foodCard(title, img, description) {
   const card = document.createElement('div');
   card.classList.add('card', 'card-with-img');
-  cards.appendChild(card);
 
   const cardImg = new Image();
   cardImg.src = img;
   card.appendChild(cardImg);
 
-  const description = document.createElement('div');
-  description.classList.add('description');
-  card.appendChild(description);
+  const descriptionEl = document.createElement('div');
+  descriptionEl.classList.add('description');
+  card.appendChild(descriptionEl);
 
   const foodTitle = document.createElement('h2');
-  foodTitle.textContent = "Banana Oatmeal";
-  description.appendChild(foodTitle);
+  foodTitle.textContent = title;
+  descriptionEl.appendChild(foodTitle);
 
   const foodDescription = document.createElement('p');
-  foodDescription.textContent = "This banana oatmeal will fuel you up for the day. Mashed bananas add sweetness, and the warm spices and maple syrup complete this quick and comforting breakfast.";
-  description.appendChild(foodDescription);
+  foodDescription.textContent = description;
+  descriptionEl.appendChild(foodDescription);
 
-  content.appendChild(container);
+  const getCard = () => card;
+
+  return {
+    getCard,
+  }
 }
+
+const foodlist = [
+  {
+    title: "Banana Oatmeal",
+    img: bananaOatmealImg,
+    description: "This banana oatmeal will fuel you up for the day. Mashed bananas add sweetness, and the warm spices and maple syrup complete this quick and comforting breakfast.",
+  },
+  {
+    title: "Banana Pancake",
+    img: bananaPancakeImg,
+    description: "This fluffy banana pancake yields generous, light, and airy pancakes, loaded with banana bread flavor. With just a handful of pantry staples and ripe bananas, you can make your dream breakfast come true as often as you want!",
+  },
+  {
+    title: "Fried Banana",
+    img: friedBananaImg,
+    description: "Made by deep frying battered banana in hot oil. These bananas taste sweet, gooey and buttery. Served on top of cool and creamy Greek yogurt, this desssert is simply decadent.",
+  }
+]
