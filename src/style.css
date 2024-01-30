@@ -59,7 +59,7 @@ header nav button.current {
 
 #content {
   padding: 5vw;
-  color: var(--golden);
+  color: var(--darkgolden);
 }
 
 .container {
@@ -90,7 +90,7 @@ header nav button.current {
 .card {
   background-color: var(--white);
   padding: var(--size-l);
-  box-shadow: 0px 0px 8px 2px var(--golden);
+  box-shadow: 0px 0px 8px 2px var(--darkgolden);
   border-radius: 8px;
 }
 
@@ -120,8 +120,12 @@ header nav button.current {
   max-height: 200px;
 }
 
-.card-with-img .description {
-  color: var(--darkgolden);
+.card-text p {
+  margin-bottom: var(--size-s);
+}
+
+.card-text .banana-team {
+  text-align: right;
 }
 
 .operating-hour {
